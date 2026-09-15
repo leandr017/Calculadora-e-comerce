@@ -2,39 +2,43 @@ print("CALCULADORA ECOMMERCE")
 print("v1")
 print("Calculos de basicos")
 
-precioV = int(input("Precio de venta: "))
-costoP = int(input("Costo por producto: "))
-comisionP = int(input("Comision por producto: "))
-envioP = int(input("Envio por producto: "))
-publicidadT = int(input("Costo publicidad total: "))
-cantV = int(input("Cantidad de ventas: "))
+precio_venta= float(input("Precio de venta: "))
+costo_producto = float(input("Costo por producto: "))
+comision_producto = float(input("Comision por producto: "))
+envio_producto = float(input("Envio por producto: "))
+publicidad_total = float(input("Costo publicidad total: "))
+cantidad_ventas = int(input("Cantidad de ventas: "))
 
-publicidadP = float(publicidadT / cantV)
-costoTP = int(costoP * cantV)
-ingresosT = int(precioV * cantV)
-comisionT = int(comisionP * cantV)
-envioT = int(envioP * cantV)
-costoT = int(costoTP + comisionT + envioT + publicidadT)
-gananciaT = int(ingresosT - costoT)
-gananciaP = float(gananciaT / cantV)
-margen = int((gananciaT)/ingresosT *100)
-roas = float(ingresosT/publicidadT)
-i = gananciaT + publicidadT
-i = i / ingresosT
-float(breakeven = 1/i)
+if cantidad_ventas==0:
+    print("La cantidad no puede ser 0")
+elif cantidad_ventas<0:
+    print("La cantidad no puede ser negativa")
+else:
+    publicidad_producto = publicidad_total / cantidad_ventas
+    costo_total_producto = costo_producto * cantidad_ventas
+    ingresos_totales = precio_venta * cantidad_ventas
+    comision_total = comision_producto * cantidad_ventas
+    envio_total = envio_producto * cantidad_ventas
+    costo_total = costo_total_producto + comision_total + envio_total + publicidad_total
+    ganancia_total= ingresos_totales - costo_total
+    ganancia_producto = ganancia_total / cantidad_ventas
+    margen = (ganancia_total)/ingresos_totales *100
+    roas = ingresos_totales/publicidad_total
+    ganancia_sin_publicidad = ganancia_total + publicidad_total
+    porcentaje_sin_publicidad = ganancia_sin_publicidad / ingresos_totales
+    breakeven = 1/porcentaje_sin_publicidad
 
-
-print("RESULTADOS")
-print(f"Ingresos totales:{ingresosT}")
-print(f"Costos Totales:{costoT}")
-print(f"Comision Total:{comisionT}")
-print(f"Envio Total:{envioT}")
-print(f"Costo de publicidad por producto:{publicidadP}")
-print(f"Ganancia total:{gananciaT}")
-print(f"Ganancia por producto:{gananciaP}")
-print(f"Margen:{margen}%")
-print(f"Roas:{roas}")
-print(f"Roas Break-even:{breakeven}")
+    print("RESULTADOS")
+    print(f"Ingresos totales:{ingresos_totales}")
+    print(f"Costos Totales:{costo_total}")
+    print(f"Comision Total:{comision_total}")
+    print(f"Envio Total:{envio_total}")
+    print(f"Costo de publicidad por producto:{publicidad_producto}")
+    print(f"Ganancia total:{ganancia_total}")
+    print(f"Ganancia por producto:{ganancia_producto}")
+    print(f"Margen:{margen:.2f}%")
+    print(f"Roas:{roas:.2f}")
+    print(f"Roas Break-even:{breakeven}")
 
 
 
