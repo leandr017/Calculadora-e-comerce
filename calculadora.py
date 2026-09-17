@@ -9,6 +9,8 @@ envio_producto = float(input("Envio por producto: "))
 publicidad_total = float(input("Costo publicidad total: "))
 cantidad_ventas = int(input("Cantidad de ventas: "))
 
+
+
 if cantidad_ventas==0:
     print("La cantidad no puede ser 0")
 elif cantidad_ventas<0:
@@ -38,10 +40,4 @@ else:
     print(f"Ganancia por producto:{ganancia_producto}")
     print(f"Margen:{margen:.2f}%")
     print(f"Roas:{roas:.2f}")
-    print(f"Roas Break-even:{breakeven}")
-
-
-
-
-
-
+    print(f"Roas Break-even:{breakeven:.2f}")
